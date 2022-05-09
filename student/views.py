@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
 
 from .models import LessonFiles
 from .forms import LessonFilesModelForms
+from .serializers import LessonFilesSerializer
 
 
 def lesson_view(request):
@@ -19,3 +21,8 @@ def lesson_view(request):
     lessonfiles = LessonFiles.objects.all()
     
     return render(request, 'student/lesson_view.html', context={'lessonfiles': lessonfiles, 'lessonfiles_form': lessonfiles_form})
+
+
+class LesssonFilesViewSet(ModelViewSet):
+    serializer_class = LessonFilesSerializer
+    queryset = LessonFiles.objects.all()
