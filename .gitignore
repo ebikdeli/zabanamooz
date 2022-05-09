@@ -1,7 +1,7 @@
 #BACKEND
 
 # !__init__.py <==> This should be after '**/migrations/**' unless it skipped
-**/migrations/**
+# **/migrations/**
 !__init__.py
 **__pychache__/**
 **/__pycharm__*
@@ -11,8 +11,8 @@
 *.vscode/**
 .vs*/**
 .VS*/**
-*.db
-*.sqlite3
+# *.db
+# *.sqlite3
 **assets/**
 **media/**
 
