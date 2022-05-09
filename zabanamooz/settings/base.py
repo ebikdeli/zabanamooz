@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 
     # 'accounts.apps.AccountsConfig',	# <==> For signals this is better than simple 'accounts'
     'vitrin',
+    'student',
 ]
 
 MIDDLEWARE = [

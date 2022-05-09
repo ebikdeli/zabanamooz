@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create new lesson:</h1><br>
+    <form action="{% url 'student:lesson_view' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{lessonfiles_form.as_table}}
+        </table>
+        <input type="submit" value="send">
+    </form><br><br>
+
+    {% if lessonfiles %}
+        <h2>watch all the lessons:</h2>
+        {% for lesson in lessonfiles %}
+        <br><br><p>{{lesson.name}}</p>
+        <video width="600" height="400" controls>
+            <source src="{{lesson.video.url}}">
+            Your browser does not support the video tag.
+          </video>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>

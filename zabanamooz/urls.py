@@ -11,6 +11,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('student/', include('student.urls')),
     path('', include('vitrin.urls')),
     # path('api-auth/', include('rest_framework.urls')),
     # path('token-auth/', token_view.obtain_auth_token),
