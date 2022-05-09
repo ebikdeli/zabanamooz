@@ -1,7 +1,7 @@
 altgraph==0.17.2
 asgiref==3.4.1
 auto-py-to-exe==2.10.1
-backports.zoneinfo==0.2.1
+# backports.zoneinfo==0.2.1
 bottle==0.12.19
 bottle-websocket==0.2.9
 certifi==2021.10.8
