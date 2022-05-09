@@ -10,6 +10,6 @@ router = routers.DefaultRouter()
 router.register('lessonfiles', views.LesssonFilesViewSet, 'lessonfiles')
 
 urlpatterns = [
-    path('api', include(router.urls)),
+    path('api/', include(router.urls)),
     path('', views.lesson_view, name='lesson_view'),
 ]
