@@ -28,7 +28,7 @@ idna==3.3
 Markdown==3.3.4
 pefile==2021.9.3
 Pillow==9.0.0
-psycopg2==2.9.1
+# psycopg2==2.9.1
 pycparser==2.21
 pyinstaller==4.5.1
 pyinstaller-hooks-contrib==2021.3
