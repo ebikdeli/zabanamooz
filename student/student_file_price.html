@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View files and prices</title>
+</head>
+<body>
+    {% if files %}
+        <h1>All files sent:</h1>
+        {% for f, v in files.items %}
+            </h2>{{ f }} : {{ v }}</h2>
+        {% endfor %}
+    {% else %}
+        <h2>There is no file uploaded</h2>
+    {% endif %}
+
+    {% if data %}
+        <h1>All data sent:</h1>
+        {% for d, v in data.items %}
+            <h2>{{ d }} : {{ v }}</h2>
+        {% endfor %}
+    {% else %}
+        <h2>There are no data uploaded</h2>
+    {% endif %}
+</body>
+</html>
