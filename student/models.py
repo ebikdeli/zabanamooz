@@ -11,6 +11,7 @@ class LessonFiles(models.Model):
 
 class FileUpload(models.Model):
     file = models.FileField()
+    describe = models.CharField(max_length=100, blank=True, null=True)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
@@ -23,6 +24,8 @@ class FileUpload(models.Model):
 
 class Prices(models.Model):
     price = models.PositiveIntegerField()
+    describe = models.TextField(blank=True, null=True)
+    day = models.PositiveIntegerField(blank=True, null=True)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
@@ -34,7 +37,7 @@ class Prices(models.Model):
 
 
 class Student(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     age = models.PositiveIntegerField(blank=True, null=True)
     files = GenericRelation(FileUpload)
     prices = GenericRelation(Prices)

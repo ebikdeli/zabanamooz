@@ -14,6 +14,6 @@ router.register('prices', views.PricesViewSet, 'prices')
 
 urlpatterns = [
     path('api/', include(router.urls)),
-    path('data/', views.student_file_price, name='data'),
+    path('data/', views.student_file_price_create, name='data'),
     path('', views.lesson_view, name='lesson_view'),
 ]
