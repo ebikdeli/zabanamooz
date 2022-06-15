@@ -44,7 +44,7 @@ def student_file_price_create(request):
         # Create or get student by 'name'
         student = None
         name = data.pop('name', None)
-        age = data.pop('age', ['0']])
+        age = data.pop('age', ['0'])
         if not name:
             return JsonResponse(data={'status': 'no', 'message': 'There is no name sent!'}, safe=False)
         student_qs = Student.objects.filter(name=name[0])
