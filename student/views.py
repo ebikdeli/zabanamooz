@@ -38,7 +38,9 @@ def student_file_price_create(request):
         data = dict(request.POST)
         # print('files: ', files)
         # print('data: ', data)
-        return JsonResponse(data=data, safe='False')
+        
+        # return JsonResponse(data=data, safe='False')
+        
         # Create or get student by 'name'
         student = None
         name = data.pop('name', None)
