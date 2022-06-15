@@ -40,7 +40,7 @@ def student_file_price_create(request):
         # print('data: ', data)
         
         # return JsonResponse(data=data, safe='False')
-        
+        print(data)
         # Create or get student by 'name'
         student = None
         name = data.pop('name', None)
