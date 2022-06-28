@@ -89,8 +89,8 @@ def student_file_price_create(request):
             prices_number = len(price_data_list) // 3
             for i in range(prices_number):
                 print('sorted prices: ', price_data_list)
-                day = int(price_data_list[i][1])
-                price = int(price_data_list[i + prices_number][1])
+                day = int(price_data_list[i][1]) if price_data_list[i][1] else 0
+                price = int(price_data_list[i + prices_number][1]) if price_data_list[i + prices_number][1] else 0
                 describe = price_data_list[i + prices_number * 2][1]
                 print('day: ', day, '   describe:   ', describe, '   price: ', price)
                 student.prices.create(price=price, describe=describe, day=day)
